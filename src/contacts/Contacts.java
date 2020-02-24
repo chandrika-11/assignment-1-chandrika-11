@@ -2,7 +2,7 @@ package contacts;
 
 import contactNumber.ContactNumber;
 import contactsList.ContactList;
-import node.Node;
+import linkedList.Node;
 import validInputs.ValidInputs;
 
 import java.util.LinkedList;

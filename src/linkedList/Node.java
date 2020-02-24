@@ -29,5 +29,4 @@ public class Node {
         return this.data.toString();
     }
 
-
 }

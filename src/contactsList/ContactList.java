@@ -1,6 +1,7 @@
 package contactsList;
 
 import contactNumber.ContactNumber;
+import linkedList.Node;
 import validInputs.ValidInputs;
 
 import java.util.LinkedList;
@@ -34,7 +35,7 @@ public class ContactList extends LinkedList<ContactNumber> {
         } else if (contactNumber.length() == 11) {
             contactNumber = contactNumber.substring(1);
         }
-        return new Node<>(new ContactNumber(contactNumber));
+        return new Node(new ContactNumber(contactNumber));
 
     }
 
