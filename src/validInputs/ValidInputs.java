@@ -1,6 +1,8 @@
 package validInputs;
 
 
+import myNoInputException.MyNoInputException;
+
 import java.util.Scanner;
 
 public class ValidInputs {
