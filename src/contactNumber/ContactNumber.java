@@ -14,4 +14,10 @@ public class ContactNumber {
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
+
+    @Override
+    public String toString() {
+        return contactNumber;
+    }
+
 }
