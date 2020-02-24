@@ -48,7 +48,7 @@ public class ContactList extends LinkedList<ContactNumber> {
         return display();
     }
 
-    public static int addContactNumber() {
+    public int addContactNumber() {
         Node<ContactNumber> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
