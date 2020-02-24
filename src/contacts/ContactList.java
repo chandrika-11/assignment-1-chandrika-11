@@ -1,19 +1,20 @@
 package contacts;
-
+import contactNumber.ContactNumber;
 import linkedList.LinkedList;
 import linkedList.Node;
 import validInputs.ValidInputs;
 
 import java.util.regex.Pattern;
 
-public class ContactList extends LinkedList<Contacts> {
+public class ContactList extends LinkedList<ContactNumber> {
     private static ValidInputs validInputs;
 
     static {
         validInputs = new ValidInputs();
     }
 
-    public Node<Contacts> enterContactNumber() {
+
+    public Node<ContactNumber> enterContactNumber() {
         System.out.println("Contact Number: ");
         String contactNumber = validInputs.inputValidString();
         //contact number must be 10 digit number
@@ -34,7 +35,7 @@ public class ContactList extends LinkedList<Contacts> {
         } else if (contactNumber.length() == 11) {
             contactNumber = contactNumber.substring(1);
         }
-        return new Node<Contacts>(new Contacts(contactNumber));
+        return new Node<>(new ContactNumber(contactNumber));
 
     }
 
@@ -48,7 +49,7 @@ public class ContactList extends LinkedList<Contacts> {
     }
 
     public int addContactNumber() {
-        Node<Contacts> contactEntered = enterContactNumber();
+        Node<ContactNumber> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
         }
@@ -58,10 +59,6 @@ public class ContactList extends LinkedList<Contacts> {
         }
         insertInAlphabeticOrder(contactEntered);
         System.out.println("Contact number added!");
-        return 0;
-    }
-
-    public int insertInAlphabeticOrder(Node<Contacts> contactEntered) {
         return 0;
     }
 
@@ -89,7 +86,7 @@ public class ContactList extends LinkedList<Contacts> {
         if (contactNumberToEdit == -1) {
             return -1;
         }
-        Node<Contacts> contactEntered = enterContactNumber();
+        Node<ContactNumber> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
         }
