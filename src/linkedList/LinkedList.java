@@ -1,6 +1,5 @@
 package linkedList;
 
-import contacts.Contacts;
 
 public class LinkedList<T> {
     private Node<T> head;
@@ -12,15 +11,14 @@ public class LinkedList<T> {
     public Node<T> getHead() {
         return head;
     }
-
     public void setHead(Node<T> head) {
         this.head = head;
     }
 
-    public int insertInAlphabeticOrder(Node<Contacts> newNode) {
+    public int insertInAlphabeticOrder(Node<T> newNode) {
         int position = 1;
         if (head == null || head.toString().toLowerCase().compareTo(newNode.toString().toLowerCase()) > 0) {
-            newNode.setNext((Node<Contacts>) head);
+            newNode.setNext((Node<T>) head);
             setHead((Node<T>) newNode);
             return position;
         } else {
@@ -29,7 +27,7 @@ public class LinkedList<T> {
                 position++;
                 temp = temp.getNext();
             }
-            newNode.setNext((Node<Contacts>) temp.getNext());
+            newNode.setNext((Node<T>) temp.getNext());
             temp.setNext((Node<T>) newNode);
         }
         return ++position;
@@ -57,6 +55,87 @@ public class LinkedList<T> {
         }
     }
 
+    public Node<T> getNode(int position) {
+        int count = 0;
+        if (head == null) {
+            return null;
+        }
+        Node<T> temp = head;
+        while (temp != null) {
+            count++;
+            if (count == position) {
+                return temp;
+            }
+            temp = temp.getNext();
+        }
+        return null;
+    }
+
+    //returns a list of nodes which match partially or completely to the given string//
+    public LinkedList<T> search(String name) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return null;
+        } else {
+            LinkedList<T> searchedResult = new LinkedList<T>();
+            Node<T> temp = head;
+            int flag = 0;
+            while (temp != null) {
+                if (temp.toString().toLowerCase().contains(name.toLowerCase())) {
+                    searchedResult.insertInAlphabeticOrder(new Node<T>(temp.getData()));
+                    flag = 1;
+                }
+                temp = temp.getNext();
+            }
+            if (flag == 0) {
+                return null;
+            }
+            return searchedResult;
+        }
+    }
+
+    public boolean matchFound(String name) {
+        if (head == null) {
+            return false;
+        } else {
+            Node<T> temp = head;
+            while (temp != null) {
+                if (temp.toString().toLowerCase().equals(name.toLowerCase())) {
+                    return true;
+                }
+                temp = temp.getNext();
+            }
+            return false;
+        }
+    }
+
+    public int display() {
+        if (head == null) {
+            return 0;
+        } else {
+            Node<T> temp = head;
+            int count = 0;
+            while (temp != null) {
+                count++;
+                System.out.println(count + ". " + temp.toString());
+                temp = temp.getNext();
+            }
+            return count;
+        }
+    }
+
+    public int countNodes() {
+        int count = 0;
+        if (head == null) {
+            return count;
+        }
+        Node<T> temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.getNext();
+        }
+        return count;
+    }
 
 }
 
