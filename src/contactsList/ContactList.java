@@ -1,13 +1,12 @@
 package contactsList;
 
 import contactNumber.ContactNumber;
-import myLinkedList.MyLinkedList;
-import node.Node;
 import validInputs.ValidInputs;
 
+import java.util.LinkedList;
 import java.util.regex.Pattern;
 
-public class ContactList extends MyLinkedList<ContactNumber> {
+public class ContactList extends LinkedList<ContactNumber> {
     private static ValidInputs validInputs;
 
     static {
@@ -60,6 +59,9 @@ public class ContactList extends MyLinkedList<ContactNumber> {
         insertInAlphabeticOrder(contactEntered);
         System.out.println("Contact number added!");
         return 0;
+    }
+
+    private void insertInAlphabeticOrder(LinkedList.Node<ContactNumber> contactEntered) {
     }
 
     public int deleteContactNumber(int countOfContacts) {
