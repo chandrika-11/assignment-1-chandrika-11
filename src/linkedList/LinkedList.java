@@ -94,6 +94,22 @@ public class LinkedList<T> {
         }
     }
 
+    public boolean matchFound(String name) {
+        if (head == null) {
+            return false;
+        } else {
+            Node<T> temp = head;
+            while (temp != null) {
+                if (temp.toString().toLowerCase().equals(name.toLowerCase())) {
+                    return true;
+                }
+                temp = temp.getNext();
+            }
+            return false;
+        }
+    }
+
+
 }
 
 
