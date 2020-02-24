@@ -48,21 +48,21 @@ public class Contacts<Person> {
     }
 
     public ContactList enterContactList() {
-        ContactList myContactList = new ContactList();
+        ContactList contactList = new ContactList();
         char choice = 'y';
         int flag = 0;
         while (choice != 'n') {
-            if (myContactList.addContactNumber() == -1) {
+            if (ContactList.addContactNumber() == -1) {
                 if (flag == 0) {
                     return null;
                 }
-                return myContactList;
+                return contactList;
             }
             flag = 1;
             System.out.println("Would you like to add another contact number? (y/n):");
             choice = validInputs.inputValidChoice('y', 'n');
         }
-        return myContactList;
+        return contactList;
     }
 
     public String enterEmail() {
@@ -237,7 +237,7 @@ public class Contacts<Person> {
                     if (nameEntry == null) {
                         continue;
                     }
-                    Node<Person> editedContact = new Node<>(new Person(nameEntry.split(" ")[0], nameEntry.split(" ")[1], contactToEdit.getData().getMyContactList(), contactToEdit.getData().getEmailAddress()));
+                    Node<Person> editedContact = new Node<>(new Person(nameEntry.split(" ")[0], nameEntry.split(" ")[1], contactToEdit.getData().getContactList(), contactToEdit.getData().getEmailAddress()));
                     personLinkedList.delete(toEdit);
                     toEdit = personLinkedList.insertInAlphabeticOrder(editedContact);
                     contactToEdit = editedContact;

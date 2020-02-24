@@ -1,15 +1,16 @@
 package person;
 import contacts.ContactList;
+
 public class Person {
     private String firstName;
     private String lastName;
-    private ContactList contactList;
+    private ContactList ContactList;
     private String emailAddress;
 
     public Person(String firstName, String lastName, ContactList contactList, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.contactList = contactList;
+        this.ContactList = contactList;
         this.emailAddress = emailAddress;
     }
 
@@ -35,11 +36,11 @@ public class Person {
     }
 
     public ContactList getContactList() {
-        return contactList;
+        return ContactList;
     }
 
     public void setContactList(ContactList contactList) {
-        this.contactList = contactList;
+        this.ContactList = contactList;
     }
 
     public String getEmailAddress() {
