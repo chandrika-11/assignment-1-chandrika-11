@@ -9,5 +9,13 @@ public class LinkedList {
         head = null;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
 
 }
