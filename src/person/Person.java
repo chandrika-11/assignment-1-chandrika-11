@@ -1,5 +1,5 @@
 package person;
-import contactsList.ContactList;
+import contacts.ContactList;
 public class Person {
     private String firstName;
     private String lastName;

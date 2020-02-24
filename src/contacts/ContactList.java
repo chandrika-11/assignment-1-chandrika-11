@@ -1,20 +1,19 @@
-package contactsList;
+package contacts;
 
-import contactNumber.ContactNumber;
+import linkedList.LinkedList;
 import linkedList.Node;
 import validInputs.ValidInputs;
 
-import java.util.LinkedList;
 import java.util.regex.Pattern;
 
-public class ContactList extends LinkedList<ContactNumber> {
+public class ContactList extends LinkedList<Contacts> {
     private static ValidInputs validInputs;
 
     static {
         validInputs = new ValidInputs();
     }
 
-    public Node<ContactNumber> enterContactNumber() {
+    public Node<Contacts> enterContactNumber() {
         System.out.println("Contact Number: ");
         String contactNumber = validInputs.inputValidString();
         //contact number must be 10 digit number
@@ -35,7 +34,7 @@ public class ContactList extends LinkedList<ContactNumber> {
         } else if (contactNumber.length() == 11) {
             contactNumber = contactNumber.substring(1);
         }
-        return new Node(new ContactNumber(contactNumber));
+        return new Node<Contacts>(new Contacts(contactNumber));
 
     }
 
@@ -49,7 +48,7 @@ public class ContactList extends LinkedList<ContactNumber> {
     }
 
     public int addContactNumber() {
-        Node<ContactNumber> contactEntered = enterContactNumber();
+        Node<Contacts> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
         }
@@ -62,7 +61,8 @@ public class ContactList extends LinkedList<ContactNumber> {
         return 0;
     }
 
-    private void insertInAlphabeticOrder(LinkedList.Node<ContactNumber> contactEntered) {
+    public int insertInAlphabeticOrder(Node<Contacts> contactEntered) {
+        return 0;
     }
 
     public int deleteContactNumber(int countOfContacts) {
@@ -89,7 +89,7 @@ public class ContactList extends LinkedList<ContactNumber> {
         if (contactNumberToEdit == -1) {
             return -1;
         }
-        Node<ContactNumber> contactEntered = enterContactNumber();
+        Node<Contacts> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
         }
@@ -116,6 +116,4 @@ public class ContactList extends LinkedList<ContactNumber> {
         }
         return -1;
     }
-
-
 }

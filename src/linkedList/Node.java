@@ -1,26 +1,31 @@
 package linkedList;
 
-public class Node {
-    private Node data;
-    private Node next;
+import contacts.Contacts;
 
-    public Node(Node data) {
+public class Node<C> {
+    private Node<C> data;
+    private Node<C> next;
+
+    public Node(Contacts data) {
         this.data = data;
     }
 
-    public Node getData() {
+    public Node(Node<C> data) {
+    }
+
+    public Contacts getData() {
         return data;
     }
 
-    public void setData(Node data) {
+    public void setData(Node<C> data) {
         this.data = data;
     }
 
-    public Node getNext() {
+    public Node<C> getNext() {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<C> next) {
         this.next = next;
     }
 
