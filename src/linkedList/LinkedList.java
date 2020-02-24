@@ -124,6 +124,18 @@ public class LinkedList<T> {
         }
     }
 
+    public int countNodes() {
+        int count = 0;
+        if (head == null) {
+            return count;
+        }
+        Node<T> temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.getNext();
+        }
+        return count;
+    }
 
 }
 
