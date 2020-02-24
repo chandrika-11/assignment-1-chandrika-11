@@ -7,5 +7,11 @@ public class ContactNumber {
         this.contactNumber = contactNumber;
     }
 
+    public String getContactNumber() {
+        return contactNumber;
+    }
 
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
 }
